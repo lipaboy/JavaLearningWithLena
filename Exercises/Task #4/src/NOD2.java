@@ -9,9 +9,10 @@ public class NOD2 {
             int number2 = (new Scanner(System.in)).nextInt();
             int number = 1;
             if (number1 > number2) {
-                number = number1; }
+                number = number1;
+            }
             if (number2 > number1) {
-                number =number2;
+                number = number2;
             }
 
             for (; number > 1; number--) { //почему он доходит до 1, если в условии number > 1, а не >=1
