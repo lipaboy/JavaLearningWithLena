@@ -21,22 +21,26 @@ public class NOD {
             numberA = number2;
             numberB = number1;
         }
+        if (number1 == number2) {
+            System.out.println("НОД = " + number1);
 
+        } else {
 
-        for (; numberA >= 0; numberA -= nod2) {
-            if (numberA > numberB)
-                nod = numberA - numberB;
-            nod2 = numberB;
-            if (nod2 > nod)
-                nod = nod2 - nod;
-        }
-        {
-            if (number1 % nod == 0 && number2 % nod == 0) {
-                System.out.println("НОД = " + nod);}
-            else {
-                System.out.println("НОД = 1");
+            for (; numberA >= 0; numberA -= nod2) {
+                if (numberA > numberB)
+                    nod = numberA - numberB;
+                nod2 = numberB;
+                if (nod2 > nod)
+                    nod = nod2 - nod;
             }
+            {
+                if (number1 % nod == 0 && number2 % nod == 0) {
+                    System.out.println("НОД = " + nod);
+                } else {
+                    System.out.println("НОД = 1");
+                }
 
+            }
         }
     }
 }
