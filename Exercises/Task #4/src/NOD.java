@@ -26,12 +26,13 @@ public class NOD {
 
         } else {
 
-            for (; numberA >= 0; numberA -= nod2) {
+            for (; numberA >= 0; numberA--) {
                 if (numberA > numberB)
-                    nod = numberA - numberB;
-                nod2 = numberB;
-                if (nod2 > nod)
-                    nod = nod2 - nod;
+                    numberA = numberA - numberB;
+                    nod = numberB;
+                if (numberB > numberA)
+                    numberB = numberB - numberA;
+                    nod = numberA;
             }
             {
                 if (number1 % nod == 0 && number2 % nod == 0) {

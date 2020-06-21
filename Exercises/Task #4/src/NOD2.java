@@ -10,23 +10,21 @@ public class NOD2 {
         int number = 1;
 
         if (number1 > number2) {
-            number = number1;
-        }
-        if (number2 > number1) {
             number = number2;
         }
-        if (number1 == number2) {
-            System.out.println("НОД = " + number1);
-        } else {
-            for (; number > 1; number--) { //почему он доходит до 1, если в условии number > 1, а не >=1
-
-                if (number1 % number == 0 && number2 % number == 0 && number1 != number2)
-                    break;
-            }
-            System.out.println("НОД = " + number);
-
-
+        else {
+            number = number1;
         }
+
+        for (; number > 1; number--) { //почему он доходит до 1, если в условии number > 1, а не >=1
+
+            if (number1 % number == 0 && number2 % number == 0)
+                break;
+        }
+        System.out.println("НОД = " + number);
+
+
+
     }
 }
 
