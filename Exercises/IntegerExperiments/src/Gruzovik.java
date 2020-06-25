@@ -19,7 +19,7 @@ public class Gruzovik {
             {
                 for (int kont = 1; kont <= kolichestvoKonteinerov; kont++) {
                     System.out.println("Контейнер: " + kont);
-                    // container #kont
+                    // container #kont.
                     for (int yash = yashFirst; yash <= yashLast; yash++) {
                         System.out.println("\tЯщик: " + yash);
                     }
