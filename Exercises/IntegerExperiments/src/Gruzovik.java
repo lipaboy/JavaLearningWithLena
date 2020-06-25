@@ -8,35 +8,37 @@ public class Gruzovik {
     public static void main(String[] args) {
         int boxAmount = new Scanner(System.in).nextInt();
 
-        double kolichestvoKonteinerov = (int) Math.ceil((double) boxAmount / MAX_KOLICHESTVO_YASHIKOV);
-
-        int kolvoKontOst = (boxAmount % MAX_KOLICHESTVO_YASHIKOV);
-
-     //Предполагаю, что так я высчитываю остаток для последнего контейнера;
-        int a;
-        for (a = boxAmount; a>=0; a-=27){
-        }
-        int ost = 27 - a;
+        int kolichestvoKonteinerov = boxAmount / MAX_KOLICHESTVO_YASHIKOV;
 
         int yashFirst = 1;
         int yashLast = 27;
-        double gruz1 = Math.ceil(kolichestvoKonteinerov / KOLICHESTVO_CONTEINEROV);
 
+        double gruz1 = (int) Math.ceil((double) boxAmount / (double) MAX_KOLICHESTVO_YASHIKOV / (double) KOLICHESTVO_CONTEINEROV);
         for (int gruz = 1; gruz <= gruz1; gruz++) {
             System.out.println("Грузовик: " + gruz);
-            for (int kont = 1; kont <= kolichestvoKonteinerov; kont++) {
-                System.out.println("Контейнер: " + kont);
-                // container #kont
-                // ящики считаются столько раз по 27 сколько контейнеров. Нужно отминусить ящики и остаток засунуть в последний конт
-                for (int yash = yashFirst; yash <= yashLast; yash++) {
-                    System.out.println("\tЯщик: " + yash);
+            {
+                for (int kont = 1; kont <= kolichestvoKonteinerov; kont++) {
+                    System.out.println("Контейнер: " + kont);
+                    // container #kont
+                    for (int yash = yashFirst; yash <= yashLast; yash++) {
+                        System.out.println("\tЯщик: " + yash);
+                    }
+
+
+                    yashFirst = yashLast + 1;
+                    yashLast = yashFirst + 26;
 
                 }
-
-                yashFirst = yashLast + 1;
-                yashLast = yashFirst + 26;
-
+                if (boxAmount % 27 != 0) {
+                    int kilvo = kolichestvoKonteinerov + 1;
+                    System.out.println("Контейнер: " + kilvo);
+                    for (int yash = yashFirst; yash <= boxAmount; yash++) {
+                        System.out.println("\tЯщик: " + yash);
+                    }
+                }
             }
         }
     }
 }
+
+
