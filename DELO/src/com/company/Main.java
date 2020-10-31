@@ -18,7 +18,7 @@ public class Main {
             String deistvie = new Scanner(System.in).nextLine();
             String[] f = deistvie.split(" ");
 
-            if (f.length == 0) {
+            if (f.length == 1) {
                 if (deistvie.equals("LIST")) {
                     int numb = 0;
                     for (int i = 0; i < arrayList.size(); i++) {
@@ -32,7 +32,7 @@ public class Main {
                     String delo = new Scanner(System.in).nextLine();
                     arrayList.add(delo);
                 }
-            } else if (f.length == 1) {
+            } else if (f.length == 2) {
 
                 int chislo = Integer.parseInt(f[1]);
 
